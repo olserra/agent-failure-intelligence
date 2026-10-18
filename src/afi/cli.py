@@ -8,6 +8,12 @@ import sys
 from pathlib import Path
 
 from .models import MODELS
+
+try:  # real-LLM adapter, optional (requires AFI_GEMINI_KEY at run time)
+    from .gemini import GeminiModel
+    MODELS = {**MODELS, GeminiModel.name: GeminiModel}
+except ImportError:  # pragma: no cover
+    pass
 from .policy import Policy
 from .report import to_json, to_markdown
 from .runner import run_benchmark
