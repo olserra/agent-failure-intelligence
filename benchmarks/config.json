@@ -1,0 +1,6 @@
+{
+  "models": ["naive-scripted", "hardened-scripted"],
+  "scenarios_dir": "scenarios",
+  "covered_classes": ["privilege-escalation-via-tool-output"],
+  "notes": "Scripted models only: harness validation at zero cost. Real-model adapters are added here later, default off."
+}
